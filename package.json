@@ -1,13 +1,49 @@
 {
   "name": "1panel-rocket-cli",
   "version": "0.0.0",
-  "description": "",
-  "main": "index.mjs",
-  "scripts": {
-    "test": "echo \"Error: no test specified\" && exit 1"
+  "description": "A CLI tool for deploy static website to 1Panel.",
+  "keywords": [
+    "1Panel",
+    "Static Website",
+    "Deploy"
+  ],
+  "homepage": "https://github.com/ruibaby/1Panel-rocket-cli",
+  "bugs": {
+    "url": "https://github.com/ruibaby/1Panel-rocket-cli/issues"
   },
-  "keywords": [],
-  "author": "",
-  "license": "ISC",
+  "repository": {
+    "type": "git",
+    "url": "https://github.com/ruibaby/1Panel-rocket-cli.git"
+  },
+  "license": "MIT",
+  "author": {
+    "name": "Ryan Wang",
+    "url": "https://github.com/ruibaby"
+  },
+  "type": "module",
+  "main": "./bin/index.mjs",
+  "bin": {
+    "1p": "./bin/index.mjs",
+    "1panel-rocket": "./bin/index.mjs"
+  },
+  "files": [
+    "bin"
+  ],
+  "scripts": {
+    "build": "ncc build src/index.mjs -o bin -m",
+    "check": "biome check src --fix --unsafe",
+    "prepublish": "pnpm run build"
+  },
+  "dependencies": {
+    "axios": "^1.9.0",
+    "commander": "^13.1.0",
+    "form-data": "^4.0.2",
+    "fs-extra": "^11.3.0"
+  },
+  "devDependencies": {
+    "@biomejs/biome": "1.9.4",
+    "@vercel/ncc": "^0.38.3",
+    "prompts": "^2.4.2"
+  },
   "packageManager": "pnpm@10.9.0"
 }
