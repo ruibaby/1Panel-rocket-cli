@@ -1,6 +1,6 @@
 {
   "name": "1panel-rocket-cli",
-  "version": "1.0.0",
+  "version": "1.0.1",
   "description": "A CLI tool for deploy static website to 1Panel.",
   "keywords": [
     "1Panel",
