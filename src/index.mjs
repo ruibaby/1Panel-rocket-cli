@@ -1,3 +1,5 @@
+#!/usr/bin/env node
+
 import fs from "node:fs";
 import path from "node:path";
 import { fileURLToPath } from "node:url";
@@ -17,10 +19,16 @@ program
   .description("🚀 A CLI tool for deploy static website to 1Panel.")
   .option(
     "-e, --baseUrl <baseUrl>",
-    "Base URL of the 1Panel API(You can also use environment variable: ONEPANEL_BASE_URL)",
+    "Base URL of the 1Panel API(You can also use environment variable: ONEPANEL_BASE_URL)"
   )
-  .option("-a, --apiKey <apiKey>", "API key of the 1Panel API(You can also use environment variable: ONEPANEL_API_KEY)")
-  .requiredOption("-p, --path <path>", "Path to the static website build directory")
+  .option(
+    "-a, --apiKey <apiKey>",
+    "API key of the 1Panel API(You can also use environment variable: ONEPANEL_API_KEY)"
+  )
+  .requiredOption(
+    "-p, --path <path>",
+    "Path to the static website build directory"
+  )
   .option("-d, --domain <domain>", "Domain name of the website")
   .option("-y, --yes", "Skip all prompts and use default values")
   .action(async (options) => {
